@@ -38,13 +38,13 @@ class IAAASession(Session):
         res.raise_for_status()
         return res
 
-    def login(self, username: str, password: str, redirect: str) -> bool:
+    def login(self, username: str, password: str, appid: str, redirect: str) -> bool:
         """登录 IAAA 并重定向"""
 
         # IAAA 登录
         json = self.post(OAUTHLOGIN, data={
             "userName": username,
-            "appid": "portal2017",
+            "appid": appid,
             "password": password,
             "redirUrl": redirect,
             "randCode": "",
