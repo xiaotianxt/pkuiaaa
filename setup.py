@@ -6,7 +6,7 @@ if __name__ == "__main__":
     setup(
         name='pkuiaaa',
         packages=find_packages(include=['pkuiaaa']),
-        version='0.1.1',
+        version='0.1.2',
         description='Returns you a iaaa.pku.edu.cn logged in session.',
         author='xiaotianxt',
         license='MIT',

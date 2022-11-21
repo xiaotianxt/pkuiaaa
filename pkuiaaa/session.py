@@ -70,8 +70,8 @@ def login_check(func):
     return wrapper
 
 
-def login(username: str, password: str, callback: str) -> IAAASession:
+def login(username: str, password: str, appid: str, callback: str) -> IAAASession:
     """登录门户，返回 IAAASession 对象"""
     session = IAAASession()
-    session.login(username, password, callback)
+    session.login(username, password, appid, callback)
     return session
