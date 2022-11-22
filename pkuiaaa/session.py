@@ -75,3 +75,14 @@ def login(username: str, password: str, appid: str, callback: str) -> IAAASessio
     session = IAAASession()
     session.login(username, password, appid, callback)
     return session
+
+
+def login_with_env(appid: str, callback: str) -> IAAASession:
+    """从环境变量读取用户名和密码，登录门户，返回 IAAASession 对象"""
+    import os
+    username = os.environ['PKU_USERNAME']
+    password = os.environ['PKU_PASSWORD']
+    if not username or not password:
+        raise ValueError(
+            'set `PKU_USERNAME` and `PKU_PASSWORD` in environment variables')
+    return login(username, password, appid, callback)
